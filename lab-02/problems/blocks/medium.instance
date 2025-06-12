@@ -1,0 +1,36 @@
+#|A B C
+#|D E
+#|F G
+#-
+#|
+#|
+#|A G F E C B D
+name: medium
+objects:
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+init:
+  - hand_empty()
+  - clear(c)
+  - clear(e)
+  - clear(g)
+  - on_table(a)
+  - on_table(d)
+  - on_table(f)
+  - on(b,a)
+  - on(c,b)
+  - on(e,d)
+  - on(g,f)
+goal:
+  - on_table(a)
+  - on(g,a)
+  - on(f,g)
+  - on(e,f)
+  - on(c,e)
+  - on(b,c)
+  - on(d,b)

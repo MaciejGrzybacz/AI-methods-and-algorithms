@@ -1,0 +1,9 @@
+name: one move
+objects:
+  - a
+init:
+  - clear(a)
+  - hand_empty()
+  - on_table(a)
+goal:
+  - holding(a)

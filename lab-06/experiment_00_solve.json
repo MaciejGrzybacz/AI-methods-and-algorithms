@@ -1,0 +1,26 @@
+{
+    "problem": {
+            "name": "traveling_salesman_problem",
+            "benchmark": "problem_2",
+            "move_generator": "swap_two_points",
+            "goal": "distance"
+    },
+    "algorithm": {
+        "name": "first_choice_hill_climbing",
+        "local_optimum_moves_threshold": 100,
+        "local_optimum_escapes_max": 0,
+        "escape_random_restart_probability": 0.5,
+        "escape_perturbation_probability": 0.5,
+        "escape_perturbation_size": 10
+    },
+    "solver_config": {
+        "time_limit": 60,
+        "show_statistics": true
+    },
+    "visualization": {
+        "enabled": true,
+        "min_time_between_steps": 0,
+        "show_only_solution": false
+    },
+    "save_solution": false
+}

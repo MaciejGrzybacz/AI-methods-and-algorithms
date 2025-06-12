@@ -1,0 +1,62 @@
+{
+    "domain": "./problems/strips/domains/hanoi_domain.json",
+    "name": "4 discs — 3 rods",
+    "objects": [
+        "r1", "r2", "r3",
+        "d1", "d2", "d3", "d4" 
+    ],
+    "init": [
+        {
+            "predicate": "is_bigger_than",
+            "instances": [
+                [ "r1", "d1" ],
+                [ "r1", "d2" ],
+                [ "r1", "d3" ],
+                [ "r1", "d4" ],
+                [ "r2", "d1" ],
+                [ "r2", "d2" ],
+                [ "r2", "d3" ],
+                [ "r2", "d4" ],
+                [ "r3", "d1" ],
+                [ "r3", "d2" ],
+                [ "r3", "d3" ],
+                [ "r3", "d4" ],
+                [ "d1", "d2" ],
+                [ "d1", "d3" ],
+                [ "d1", "d4" ],
+                [ "d2", "d3" ],
+                [ "d2", "d4" ],
+                [ "d3", "d4" ]
+            ]
+        },
+        {
+            "predicate": "lies_directly_on",
+            "instances": [
+                [ "d1", "r1" ],
+                [ "d2", "d1" ],
+                [ "d3", "d2" ],
+                [ "d4", "d3" ]
+            ]
+        },
+        {
+            "predicate": "is_on_top",
+            "instances": [
+                [ "d4" ],
+                [ "r2" ],
+                [ "r3" ]
+            ]
+        }
+    ],
+    "goal": [
+        {
+            "predicate": "lies_directly_on",
+            "instances": [
+                [ "d1", "r3" ],
+                [ "d2", "d1" ],
+                [ "d3", "d2" ],
+                [ "d4", "d3" ]
+            ]
+        }
+    ]
+}
+

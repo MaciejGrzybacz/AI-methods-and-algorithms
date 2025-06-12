@@ -1,0 +1,10 @@
+click
+markdown-it-py
+mdurl
+mpmath
+numpy
+pillow
+pygame
+Pygments
+rich
+setuptools

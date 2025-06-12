@@ -1,0 +1,52 @@
+# Blocks World Domain
+name: blocks
+predicates:
+  - on(block, block) # block lies on another block
+  - on_table(block)  # block lies on a table
+  - clear(block)     # there is nothing lying on the block
+  - hand_empty()     # the hand is empty
+  - holding(block)   # the hand is holding a block
+actions:
+  - schema: pick_up_table(block)
+    requires:
+      - clear(block)
+      - on_table(block)
+      - hand_empty()
+    adds:
+      - holding(block)
+    removes:
+      - clear(block)
+      - on_table(block)
+      - hand_empty()
+  - schema: put_on_table(block)
+    requires:
+      - holding(block)
+    adds:
+      - hand_empty()
+      - clear(block)
+      - on_table(block)
+    removes:
+      - holding(block)
+  - schema: pick_up(block, from)
+    requires:
+      - clear(block)
+      - on(block, from)
+      - hand_empty()
+    adds:
+      - holding(block)
+      - clear(from)
+    removes:
+      - hand_empty()
+      - clear(block)
+      - on(block, from)
+  - schema: put_on(block, to)
+    requires:
+      - clear(to)
+      - holding(block)
+    adds:
+      - hand_empty()
+      - clear(block)
+      - on(block, to)
+    removes:
+      - holding(block)
+      - clear(to)

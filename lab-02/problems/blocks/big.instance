@@ -1,0 +1,47 @@
+#|A B C
+#|D E F
+#|G H I J
+#|
+#-
+#|G D A
+#|H E B
+#|I C
+#|F J
+name: big
+objects:
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+  - h
+  - i
+  - j
+init:
+  - hand_empty()
+  - clear(c)
+  - clear(f)
+  - clear(j)
+  - on_table(a)
+  - on_table(d)
+  - on_table(g)
+  - on(b,a)
+  - on(c,b)
+  - on(e,d)
+  - on(f,e)
+  - on(h,g)
+  - on(i,h)
+  - on(j,i)
+goal:
+  - on_table(g)
+  - on_table(h)
+  - on_table(i)
+  - on_table(f)
+  - on(d,g)
+  - on(a,d)
+  - on(e,h)
+  - on(b,e)
+  - on(c,i)
+  - on(j,f)

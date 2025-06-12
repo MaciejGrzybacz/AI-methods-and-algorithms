@@ -1,0 +1,19 @@
+# Hanoi domain
+name: hanoi
+predicates:
+  - is_bigger_than(object, object) # object is bigger than other object (disc/rod)
+  - lies_directly_on(disc, object) # disc lies on another object
+  - is_on_top(object)              # there is nothing lying on an object
+actions:
+  - schema: move(disc, from, to)
+    requires:
+      - is_bigger_than(to, disc)
+      - is_on_top(disc)
+      - is_on_top(to)
+      - lies_directly_on(disc, from)
+    adds:
+      - is_on_top(from)
+      - lies_directly_on(disc, to)
+    removes:
+      - is_on_top(to)
+      - lies_directly_on(disc, from)

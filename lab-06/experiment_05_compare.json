@@ -1,0 +1,64 @@
+{
+    "common": {
+        "solver_config": {
+            "time_limit": 60,
+            "show_statistics": false
+        },
+        "problem": {
+            "name": "graph_coloring_problem",
+            "benchmark": "problem_3",
+            "move_generator": "change_color",
+            "goal": "min_feasible"
+        },
+        "algorithm": {
+            "name": "simulated_annealing",
+            "local_optimum_moves_threshold": 100,
+            "local_optimum_escapes_max": 0,
+            "initial_temperature": 100000,
+            "cooling_step": 0.0001,
+            "min_temperature": 1e-8,
+            "escape_random_restart_probability": 0.33,
+            "escape_perturbation_probability": 0.33,
+            "escape_perturbation_size": 10,
+            "escape_reheat_probability": 0.33,
+            "escape_reheat_ratio": 0.75
+        }
+    },
+    "overwrites": [
+        {
+            "problem": {
+                "move_generator": "kempe_chain",
+                "goal": "max_classes"
+            }
+        },
+        {
+            "problem": {
+                "move_generator": "kempe_chain",
+                "goal": "min_colors"
+            }
+        },
+        {
+            "algorithm": {
+                "name": "best_choice_hill_climbing"
+            }
+        },
+        {
+            "problem": {
+                "move_generator": "kempe_chain",
+                "goal": "max_classes"
+            },
+            "algorithm": {
+                "name": "best_choice_hill_climbing"
+            }
+        },
+        {
+            "problem": {
+                "move_generator": "kempe_chain",
+                "goal": "min_colors"
+            },
+            "algorithm": {
+                "name": "best_choice_hill_climbing"
+            }
+        }
+    ]
+}

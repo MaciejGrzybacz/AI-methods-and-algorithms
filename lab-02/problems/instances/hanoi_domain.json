@@ -1,0 +1,61 @@
+{
+    "name": "hanoi",
+    "predicates": [
+        {
+            "name": "is_bigger_than",
+            "arity": 2
+        },
+        {
+            "name": "lies_directly_on",
+            "arity": 2
+        },
+        {
+            "name": "is_on_top",
+            "arity": 1
+        }
+    ],
+    "actions": [
+        {
+            "name": "move_from_to",
+            "arity": 3,
+            "preconditions": [ 
+                {
+                    "predicate": "lies_directly_on",
+                    "args": [0, 1]
+                },
+                {
+                    "predicate": "is_bigger_than",
+                    "args": [2, 0]
+                },
+                {
+                    "predicate": "is_on_top",
+                    "args": [0]
+                },
+                {
+                    "predicate": "is_on_top",
+                    "args": [2]
+                }
+            ],
+            "positive_effects": [
+                {
+                    "predicate": "lies_directly_on",
+                    "args": [0, 2]
+                },
+                {
+                    "predicate": "is_on_top",
+                    "args": [1]
+                }
+            ],
+            "negative_effects": [
+                {
+                    "predicate": "lies_directly_on",
+                    "args": [0, 1]
+                },
+                {
+                    "predicate": "is_on_top",
+                    "args": [2]
+                }
+            ]
+        }
+    ]
+}

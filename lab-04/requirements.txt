@@ -1,0 +1,10 @@
+markdown-it-py
+mdurl
+numpy
+pillow
+Pygments
+rich
+shapely
+stopit
+types-pillow
+setuptools

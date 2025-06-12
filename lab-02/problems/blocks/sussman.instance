@@ -1,0 +1,16 @@
+name: sussman anomaly
+objects: 
+  - a
+  - b
+  - c
+init: 
+  - clear(a)
+  - clear(b)
+  - on(a,c)
+  - on_table(b)
+  - on_table(c)
+  - hand_empty()
+goal:
+  - on(b,c)
+  - on(a,b)
+

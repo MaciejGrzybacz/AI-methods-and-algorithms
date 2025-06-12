@@ -1,0 +1,14 @@
+name: solved
+objects:
+  - a
+  - b
+  - c
+init:
+  - clear(a)
+  - on_table(c)
+  - on(b,c)
+  - on(a,b)
+  - hand_empty()
+goal:
+  - on(b,c)
+  - on(a,b)

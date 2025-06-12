@@ -1,0 +1,12 @@
+name: one ove
+objects:
+  - a
+  - b
+init:
+  - clear(a)
+  - clear(b)
+  - hand_empty()
+  - on_table(a)
+  - on_table(b)
+goal:
+  - on(a,b)

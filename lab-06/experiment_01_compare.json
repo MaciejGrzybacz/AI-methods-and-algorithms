@@ -1,0 +1,62 @@
+{
+    "common": {
+        "solver_config": {
+            "time_limit": 60,
+            "show_statistics": false
+        },
+        "problem": {
+            "name": "traveling_salesman_problem",
+            "benchmark": "problem_2",
+            "move_generator": "swap_two_points",
+            "goal": "distance"
+        },
+        "algorithm": {
+            "name": "best_choice_hill_climbing",
+            "local_optimum_moves_threshold": 100,
+            "local_optimum_escapes_max": 0,
+            "escape_random_restart_probability": 0.5,
+            "escape_perturbation_probability": 0.5,
+            "escape_perturbation_size": 10
+        }
+    },
+    "overwrites": [
+        {
+            "algorithm": {
+                "name": "first_choice_hill_climbing"
+            }
+        },
+        {
+            "algorithm": {
+                "name": "random_choice_hill_climbing"
+            }
+        },
+        {
+            "algorithm": {
+                "name": "worst_choice_hill_climbing"
+            }
+        },
+        {
+            "algorithm": {
+                "local_optimum_escapes_max": 10
+            }
+        },
+        {
+            "algorithm": {
+                "name": "first_choice_hill_climbing",
+                "local_optimum_escapes_max": 10
+            }
+        },
+        {
+            "algorithm": {
+                "name": "random_choice_hill_climbing",
+                "local_optimum_escapes_max": 10
+            }
+        },
+        {
+            "algorithm": {
+                "name": "worst_choice_hill_climbing",
+                "local_optimum_escapes_max": 10
+            }
+        }
+    ]
+}

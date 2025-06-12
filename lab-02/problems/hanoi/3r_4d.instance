@@ -1,0 +1,42 @@
+name: 4 discs — 3 rods
+objects: 
+  - r1
+  - r2
+  - r3
+  - d1
+  - d2
+  - d3
+  - d4
+init: 
+  - is_bigger_than(r1, d1)
+  - is_bigger_than(r1, d2)
+  - is_bigger_than(r1, d3)
+  - is_bigger_than(r1, d4)
+  - is_bigger_than(r2, d1)
+  - is_bigger_than(r2, d2)
+  - is_bigger_than(r2, d3)
+  - is_bigger_than(r2, d4)
+  - is_bigger_than(r3, d1)
+  - is_bigger_than(r3, d2)
+  - is_bigger_than(r3, d3)
+  - is_bigger_than(r3, d4)
+  - is_bigger_than(d1, d2)
+  - is_bigger_than(d1, d3)
+  - is_bigger_than(d1, d4)
+  - is_bigger_than(d2, d3)
+  - is_bigger_than(d2, d4)
+  - is_bigger_than(d3, d4)
+  - lies_directly_on(d1, r1),
+  - lies_directly_on(d2, d1),
+  - lies_directly_on(d3, d2),
+  - lies_directly_on(d4, d3)
+  - is_on_top(d4)
+  - is_on_top(r2)
+  - is_on_top(r3)
+goal:
+  - lies_directly_on(d1, r3)
+  - lies_directly_on(d2, d1)
+  - lies_directly_on(d3, d2)
+  - lies_directly_on(d4, d3)
+
+

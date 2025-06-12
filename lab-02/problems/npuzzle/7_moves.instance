@@ -1,0 +1,70 @@
+#2 5 3
+#1 7 6
+#4 0 8
+#-----
+#1 2 3
+#4 5 6
+#7 8 0
+name: 7 moves
+objects:
+  - "1_1"
+  - "2_1"
+  - "3_1"
+  - "1_2"
+  - "2_2"
+  - "3_2"
+  - "1_3"
+  - "2_3"
+  - "3_3"
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+init:
+  - neighbors(1_1,1_2)
+  - neighbors(1_2,1_3)
+  - neighbors(2_1,2_2)
+  - neighbors(2_2,2_3)
+  - neighbors(3_1,3_2)
+  - neighbors(3_2,3_3)
+  - neighbors(1_1,2_1)
+  - neighbors(2_1,3_1)
+  - neighbors(1_2,2_2)
+  - neighbors(2_2,3_2)
+  - neighbors(1_3,2_3)
+  - neighbors(2_3,3_3)
+  - neighbors(1_2,1_1)
+  - neighbors(1_3,1_2)
+  - neighbors(2_2,2_1)
+  - neighbors(2_3,2_2)
+  - neighbors(3_2,3_1)
+  - neighbors(3_3,3_2)
+  - neighbors(2_1,1_1)
+  - neighbors(3_1,2_1)
+  - neighbors(2_2,1_2)
+  - neighbors(3_2,2_2)
+  - neighbors(2_3,1_3)
+  - neighbors(3_3,2_3)
+  - at(2, 1_1)
+  - at(5, 2_1)
+  - at(3, 3_1)
+  - at(1, 1_2)
+  - at(7, 2_2)
+  - at(6, 3_2)
+  - at(4, 1_3)
+  - empty_at(2_3)
+  - at(8, 3_3)
+goal:
+  - at(1, 1_1)
+  - at(2, 2_1)
+  - at(3, 3_1)
+  - at(4, 1_2)
+  - at(5, 2_2)
+  - at(6, 3_2)
+  - at(7, 1_3)
+  - at(8, 2_3)
+  - empty_at(3_3)

@@ -1,0 +1,18 @@
+# Sliding N-Puzzle Domain
+name: npuzzle
+predicates:
+  - neighbors(place, place) # two places are next one to other
+  - at(puzzle, place)       # a puzzle lies on a place
+  - empty_at(place)         # a place is empty
+actions:
+  - schema: slide(puzzle, from, to)
+    requires:
+      - at(puzzle, from)
+      - empty_at(to)
+      - neighbors(to, from)
+    adds:
+      - at(puzzle, to)
+      - empty_at(from)
+    removes:
+      - at(puzzle, from)
+      - empty_at(to)

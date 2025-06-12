@@ -1,0 +1,47 @@
+{
+    "common": {
+        "solver_config": {
+            "time_limit": 60,
+            "show_statistics": false
+        },
+        "problem": {
+            "name": "traveling_salesman_problem",
+            "benchmark": "problem_2",
+            "move_generator": "two_opt",
+            "goal": "distance"
+        },
+        "algorithm": {
+            "name": "simulated_annealing",
+            "local_optimum_moves_threshold": 100,
+            "local_optimum_escapes_max": 0,
+            "initial_temperature": 1000000,
+            "cooling_step": 0.0001,
+            "min_temperature": 1e-8,
+            "escape_random_restart_probability": 0.33,
+            "escape_perturbation_probability": 0.33,
+            "escape_perturbation_size": 10,
+            "escape_reheat_probability": 0.33,
+            "escape_reheat_ratio": 0.75
+        }
+    },
+    "overwrites": [
+        {
+            "algorithm": {
+                "local_optimum_escapes_max": 5
+            }
+        },
+        {
+            "problem": {
+                "move_generator": "swap_two_points"
+            }
+        },
+        {
+            "problem": {
+                "move_generator": "swap_two_points"
+            },
+            "algorithm": {
+                "local_optimum_escapes_max": 5
+            }
+        }
+    ]
+}
